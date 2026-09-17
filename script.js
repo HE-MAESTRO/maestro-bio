@@ -24,7 +24,7 @@ async function loadProjects() {
         if (projects.length === 0) {
             grid.innerHTML = `
                 <div class="glass-card" style="text-align:center; grid-column: 1/-1; opacity:0.5;">
-                    <p>Проекты скоро появятся...</p>
+                    <p><i class="mdi mdi-rocket-launch-outline"></i> Проекты скоро появятся...</p>
                 </div>
             `;
             return;
@@ -56,7 +56,7 @@ async function loadProjects() {
         // Trigger fade-in after render
         requestAnimationFrame(() => {
             document.querySelectorAll('.project-card.fade-in').forEach((el, i) => {
-                setTimeout(() => el.classList.add('visible'), i * 150);
+                setTimeout(() => el.classList.add('visible'), i * 120);
             });
         });
 
@@ -77,10 +77,10 @@ function initScrollAnimations() {
                 entry.target.classList.add('visible');
             }
         });
-    }, { threshold: 0.15 });
+    }, { threshold: 0.1 });
 
     // Add fade-in class to elements
-    document.querySelectorAll('.glass-card, .tech-item, h2').forEach(el => {
+    document.querySelectorAll('.glass-card, .tech-item, h2, .section-subtitle, .scroll-hint').forEach(el => {
         if (!el.classList.contains('fade-in')) {
             el.classList.add('fade-in');
         }
@@ -93,17 +93,31 @@ function initParticles() {
     const container = document.getElementById('particles');
     if (!container) return;
 
-    for (let i = 0; i < 30; i++) {
+    for (let i = 0; i < 40; i++) {
         const particle = document.createElement('div');
         particle.classList.add('particle');
         particle.style.left = Math.random() * 100 + '%';
-        particle.style.top = (50 + Math.random() * 50) + '%';
-        particle.style.animationDelay = Math.random() * 4 + 's';
-        particle.style.animationDuration = (3 + Math.random() * 3) + 's';
+        particle.style.top = (40 + Math.random() * 60) + '%';
+        particle.style.animationDelay = Math.random() * 5 + 's';
+        particle.style.animationDuration = (3 + Math.random() * 4) + 's';
         particle.style.width = (2 + Math.random() * 3) + 'px';
         particle.style.height = particle.style.width;
         container.appendChild(particle);
     }
+}
+
+// ===== Ghost parallax on mouse move =====
+function initGhostParallax() {
+    const ghosts = document.querySelectorAll('.ghost-img');
+    if (!ghosts.length) return;
+
+    document.addEventListener('mousemove', (e) => {
+        const x = (e.clientX / window.innerWidth - 0.5) * 20;
+        const y = (e.clientY / window.innerHeight - 0.5) * 10;
+        ghosts.forEach(ghost => {
+            ghost.style.transform = `translate(${x}px, ${y}px)`;
+        });
+    });
 }
 
 // ===== Init =====
@@ -111,4 +125,5 @@ document.addEventListener('DOMContentLoaded', () => {
     loadProjects();
     initScrollAnimations();
     initParticles();
+    initGhostParallax();
 });

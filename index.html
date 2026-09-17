@@ -12,6 +12,13 @@
 </head>
 <body>
 
+    <!-- Animated background layers -->
+    <div class="bg-layer bg-grid"></div>
+    <div class="bg-layer bg-noise"></div>
+    <div class="bg-layer bg-glow bg-glow--1"></div>
+    <div class="bg-layer bg-glow bg-glow--2"></div>
+    <div class="bg-layer bg-glow bg-glow--3"></div>
+
     <!-- HERO 1: Welcome -->
     <section class="hero hero-welcome" id="welcome">
         <div class="ghost-container">
@@ -19,7 +26,7 @@
         </div>
         <div class="glass-card welcome-card">
             <h1>Добро пожаловать</h1>
-            <p class="subtitle">Давайте познакомимся.</p>
+            <p class="subtitle">Давайте познакомимся</p>
             <div class="bio-text">
                 <p>Я, <span class="accent">Маэстро</span>, мне 18 лет. Разработчик-энтузиаст, полон амбиций.</p>
                 <p>Превращаю идеи в рабочий код — быстро, чисто, без лишнего.</p>
@@ -58,7 +65,8 @@
 
     <!-- HERO 2: Projects -->
     <section class="hero hero-projects" id="projects">
-        <h2>Мои проекты</h2>
+        <h2><i class="mdi mdi-folder-open-outline"></i> Мои проекты</h2>
+        <p class="section-subtitle">Подтягиваются автоматически с GitHub</p>
         <div class="projects-grid" id="projects-grid">
             <!-- Filled by JS from GitHub API -->
         </div>
@@ -66,7 +74,7 @@
 
     <!-- HERO 3: Socials -->
     <section class="hero hero-socials" id="socials">
-        <h2>Мои соцсети</h2>
+        <h2><i class="mdi mdi-link-variant"></i> Мои соцсети</h2>
         <div class="socials-grid">
             <a href="https://t.me/maestromc1" target="_blank" class="glass-card social-card">
                 <i class="mdi mdi-send"></i>
@@ -93,7 +101,7 @@
                 <img src="ghost.jpg" alt="Ghost" class="ghost-img ghost-small">
             </div>
             <div class="glass-card farewell-card">
-                <h2>Спасибо, что посетил<br>мою биографию.</h2>
+                <h2>Спасибо, что посетил<br>мою биографию</h2>
                 <p class="farewell-text">Удачи тебе <i class="mdi mdi-heart"></i></p>
             </div>
             <div class="particles" id="particles"></div>
