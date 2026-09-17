@@ -120,10 +120,36 @@ function initGhostParallax() {
     });
 }
 
+// ===== Cursor Ghost Follower =====
+function initCursorGhost() {
+    const cursor = document.getElementById('cursor-ghost');
+    if (!cursor) return;
+
+    document.addEventListener('mousemove', (e) => {
+        cursor.style.left = (e.clientX - 12) + 'px';
+        cursor.style.top = (e.clientY - 12) + 'px';
+    });
+}
+
+// ===== Scroll Progress Bar =====
+function initScrollProgress() {
+    const bar = document.getElementById('scroll-progress');
+    if (!bar) return;
+
+    window.addEventListener('scroll', () => {
+        const scrollTop = window.scrollY;
+        const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+        const progress = (scrollTop / docHeight) * 100;
+        bar.style.width = progress + '%';
+    });
+}
+
 // ===== Init =====
 document.addEventListener('DOMContentLoaded', () => {
     loadProjects();
     initScrollAnimations();
     initParticles();
     initGhostParallax();
+    initCursorGhost();
+    initScrollProgress();
 });

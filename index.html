@@ -12,6 +12,12 @@
 </head>
 <body>
 
+    <!-- Scroll progress bar -->
+    <div class="scroll-progress" id="scroll-progress"></div>
+
+    <!-- Cursor ghost follower -->
+    <img src="ghost.png" alt="" class="cursor-ghost" id="cursor-ghost">
+
     <!-- Animated background layers -->
     <div class="bg-layer bg-grid"></div>
     <div class="bg-layer bg-noise"></div>
@@ -21,6 +27,7 @@
 
     <!-- HERO 1: Welcome -->
     <section class="hero hero-welcome" id="welcome">
+        <span class="section-number">01 / 04</span>
         <div class="ghost-container">
             <img src="ghost.png" alt="Ghost" class="ghost-img">
         </div>
@@ -65,6 +72,7 @@
 
     <!-- HERO 2: Projects -->
     <section class="hero hero-projects" id="projects">
+        <span class="section-number">02 / 04</span>
         <h2><i class="mdi mdi-folder-open-outline"></i> Мои проекты</h2>
         <p class="section-subtitle">Подтягиваются автоматически с GitHub</p>
         <div class="projects-grid" id="projects-grid">
@@ -74,6 +82,7 @@
 
     <!-- HERO 3: Socials -->
     <section class="hero hero-socials" id="socials">
+        <span class="section-number">03 / 04</span>
         <h2><i class="mdi mdi-link-variant"></i> Мои соцсети</h2>
         <div class="socials-grid">
             <a href="https://t.me/maestromc1" target="_blank" class="glass-card social-card">
@@ -81,10 +90,10 @@
                 <span>Telegram</span>
                 <p class="social-handle">@maestromc1</p>
             </a>
-            <a href="https://www.tiktok.com/@maestromc111" target="_blank" class="glass-card social-card">
+            <a href="https://www.tiktok.com/@maestromc11" target="_blank" class="glass-card social-card">
                 <i class="mdi mdi-music-note"></i>
                 <span>TikTok</span>
-                <p class="social-handle">@maestromc111</p>
+                <p class="social-handle">@maestromc11</p>
             </a>
             <a href="https://github.com/HE-MAESTRO" target="_blank" class="glass-card social-card">
                 <i class="mdi mdi-github"></i>
@@ -92,10 +101,25 @@
                 <p class="social-handle">HE-MAESTRO</p>
             </a>
         </div>
+
+        <!-- QR Code Card -->
+        <div class="qr-section">
+            <div class="glass-card qr-card">
+                <div class="qr-frame">
+                    <img src="qr-tg.png" alt="Telegram QR" class="qr-img">
+                </div>
+                <div class="qr-info">
+                    <i class="mdi mdi-qrcode-scan"></i>
+                    <p class="qr-title">Сканируй</p>
+                    <p class="qr-desc">Быстрый доступ к Telegram</p>
+                </div>
+            </div>
+        </div>
     </section>
 
     <!-- HERO 4: Farewell -->
     <section class="hero hero-farewell" id="farewell">
+        <span class="section-number">04 / 04</span>
         <div class="farewell-content">
             <div class="ghost-container farewell-ghost">
                 <img src="ghost.png" alt="Ghost" class="ghost-img ghost-small">

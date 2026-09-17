@@ -375,6 +375,57 @@ h2 i {
     opacity: 0.4;
 }
 
+/* ===== QR CODE SECTION ===== */
+.qr-section {
+    margin-top: 48px;
+    display: flex;
+    justify-content: center;
+}
+
+.qr-card {
+    display: flex;
+    align-items: center;
+    gap: 28px;
+    padding: 32px 40px;
+}
+
+.qr-frame {
+    padding: 12px;
+    border: 1px solid var(--glass-border);
+    border-radius: 16px;
+    background: rgba(255, 255, 255, 0.03);
+}
+
+.qr-img {
+    width: 140px;
+    height: 140px;
+    border-radius: 8px;
+    display: block;
+}
+
+.qr-info {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.qr-info i {
+    font-size: 2rem;
+    opacity: 0.6;
+    margin-bottom: 4px;
+}
+
+.qr-title {
+    font-family: var(--font-heading);
+    font-size: 1.3rem;
+    letter-spacing: 0.03em;
+}
+
+.qr-desc {
+    font-size: 0.8rem;
+    opacity: 0.45;
+}
+
 /* ===== HERO 4: FAREWELL ===== */
 .hero-farewell {
     position: relative;
@@ -444,6 +495,41 @@ h2 i {
     0% { opacity: 0; transform: translateY(0) scale(0); }
     20% { opacity: 0.5; }
     100% { opacity: 0; transform: translateY(-250px) scale(1); }
+}
+
+/* ===== CURSOR GHOST ===== */
+.cursor-ghost {
+    position: fixed;
+    width: 24px;
+    height: 24px;
+    pointer-events: none;
+    z-index: 9999;
+    opacity: 0.3;
+    transition: transform 0.1s ease-out;
+    image-rendering: pixelated;
+}
+
+/* ===== SCROLL PROGRESS ===== */
+.scroll-progress {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 2px;
+    background: var(--text);
+    z-index: 1000;
+    transition: width 0.1s ease-out;
+    opacity: 0.6;
+}
+
+/* ===== SECTION NUMBERS ===== */
+.section-number {
+    position: absolute;
+    top: 32px;
+    left: 32px;
+    font-family: var(--font-body);
+    font-size: 0.7rem;
+    opacity: 0.15;
+    letter-spacing: 0.1em;
 }
 
 /* ===== SCROLL ANIMATIONS ===== */
