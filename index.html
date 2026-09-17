@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Маэстро — Bio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/@mdi/font@7.4.47/css/materialdesignicons.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- HERO 1: Welcome -->
+    <section class="hero hero-welcome" id="welcome">
+        <div class="ghost-container">
+            <img src="ghost.jpg" alt="Ghost" class="ghost-img">
+        </div>
+        <div class="glass-card welcome-card">
+            <h1>Добро пожаловать</h1>
+            <p class="subtitle">Давайте познакомимся.</p>
+            <div class="bio-text">
+                <p>Я, <span class="accent">Маэстро</span>, мне 18 лет. Разработчик-энтузиаст, полон амбиций.</p>
+                <p>Превращаю идеи в рабочий код — быстро, чисто, без лишнего.</p>
+            </div>
+            <div class="tech-stack">
+                <div class="tech-item">
+                    <i class="mdi mdi-robot"></i>
+                    <span>Телеграм-боты</span>
+                </div>
+                <div class="tech-item">
+                    <i class="mdi mdi-discord"></i>
+                    <span>Дискорд-боты</span>
+                </div>
+                <div class="tech-item">
+                    <i class="mdi mdi-web"></i>
+                    <span>Сайты / Landing</span>
+                </div>
+                <div class="tech-item">
+                    <i class="mdi mdi-nodejs"></i>
+                    <span>Node.js</span>
+                </div>
+                <div class="tech-item">
+                    <i class="mdi mdi-language-typescript"></i>
+                    <span>TypeScript</span>
+                </div>
+                <div class="tech-item">
+                    <i class="mdi mdi-language-python"></i>
+                    <span>Python</span>
+                </div>
+            </div>
+        </div>
+        <div class="scroll-hint">
+            <i class="mdi mdi-chevron-double-down"></i>
+        </div>
+    </section>
+
+    <!-- HERO 2: Projects -->
+    <section class="hero hero-projects" id="projects">
+        <h2>Мои проекты</h2>
+        <div class="projects-grid" id="projects-grid">
+            <!-- Filled by JS from GitHub API -->
+        </div>
+    </section>
+
+    <!-- HERO 3: Socials -->
+    <section class="hero hero-socials" id="socials">
+        <h2>Мои соцсети</h2>
+        <div class="socials-grid">
+            <a href="https://t.me/maestromc1" target="_blank" class="glass-card social-card">
+                <i class="mdi mdi-send"></i>
+                <span>Telegram</span>
+                <p class="social-handle">@maestromc1</p>
+            </a>
+            <a href="https://www.tiktok.com/@maestromc111" target="_blank" class="glass-card social-card">
+                <i class="mdi mdi-music-note"></i>
+                <span>TikTok</span>
+                <p class="social-handle">@maestromc111</p>
+            </a>
+            <a href="https://github.com/HE-MAESTRO" target="_blank" class="glass-card social-card">
+                <i class="mdi mdi-github"></i>
+                <span>GitHub</span>
+                <p class="social-handle">HE-MAESTRO</p>
+            </a>
+        </div>
+    </section>
+
+    <!-- HERO 4: Farewell -->
+    <section class="hero hero-farewell" id="farewell">
+        <div class="farewell-content">
+            <div class="ghost-container farewell-ghost">
+                <img src="ghost.jpg" alt="Ghost" class="ghost-img ghost-small">
+            </div>
+            <div class="glass-card farewell-card">
+                <h2>Спасибо, что посетил<br>мою биографию.</h2>
+                <p class="farewell-text">Удачи тебе <i class="mdi mdi-heart"></i></p>
+            </div>
+            <div class="particles" id="particles"></div>
+        </div>
+    </section>
+
+    <script src="script.js"></script>
+</body>
+</html>
