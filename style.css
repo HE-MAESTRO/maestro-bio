@@ -509,6 +509,45 @@ h2 i {
     100% { opacity: 0; transform: translateY(-250px) scale(1); }
 }
 
+/* ===== VERTICAL MARQUEE (right edge) ===== */
+.marquee-vertical {
+    position: fixed;
+    top: 0;
+    right: 0;
+    height: 100vh;
+    width: 44px;
+    overflow: hidden;
+    z-index: 900;
+    pointer-events: none;
+    border-left: 1px solid rgba(255, 255, 255, 0.06);
+    background: rgba(255, 255, 255, 0.01);
+}
+
+.marquee-vertical-track {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 48px;
+    padding: 24px 0;
+    animation: marquee-v 18s linear infinite;
+    will-change: transform;
+}
+
+.marquee-vertical-track span {
+    writing-mode: vertical-rl;
+    text-orientation: mixed;
+    font-family: var(--font-heading);
+    font-size: 0.85rem;
+    letter-spacing: 0.4em;
+    color: rgba(255, 255, 255, 0.18);
+    white-space: nowrap;
+}
+
+@keyframes marquee-v {
+    from { transform: translateY(0); }
+    to   { transform: translateY(-100%); }
+}
+
 /* ===== SCROLL PROGRESS ===== */
 .scroll-progress {
     position: fixed;
@@ -564,6 +603,10 @@ h2 i {
 }
 
 @media (max-width: 768px) {
+    .marquee-vertical {
+        display: none;
+    }
+
     .hero {
         padding: 40px 16px;
     }
@@ -593,12 +636,15 @@ h2 i {
     }
 
     .tech-stack {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
         gap: 10px;
     }
 
     .tech-item {
-        padding: 10px 16px;
-        font-size: 0.8rem;
+        padding: 10px 14px;
+        font-size: 0.75rem;
+        justify-content: center;
     }
 
     .bg-glow {
