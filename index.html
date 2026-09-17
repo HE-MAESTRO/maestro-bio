@@ -15,53 +15,94 @@
     <!-- Scroll progress bar -->
     <div class="scroll-progress" id="scroll-progress"></div>
 
-    <!-- Cursor ghost follower -->
-    <img src="ghost.png" alt="" class="cursor-ghost" id="cursor-ghost">
-
     <!-- Animated background layers -->
     <div class="bg-layer bg-grid"></div>
     <div class="bg-layer bg-noise"></div>
     <div class="bg-layer bg-glow bg-glow--1"></div>
     <div class="bg-layer bg-glow bg-glow--2"></div>
-    <div class="bg-layer bg-glow bg-glow--3"></div>
 
     <!-- HERO 1: Welcome -->
     <section class="hero hero-welcome" id="welcome">
         <span class="section-number">01 / 04</span>
-        <div class="ghost-container">
-            <img src="ghost.png" alt="Ghost" class="ghost-img">
-        </div>
-        <div class="glass-card welcome-card">
-            <h1>Добро пожаловать</h1>
-            <p class="subtitle">Давайте познакомимся</p>
-            <div class="bio-text">
-                <p>Я, <span class="accent">Маэстро</span>, мне 18 лет. Разработчик-энтузиаст, полон амбиций.</p>
-                <p>Превращаю идеи в рабочий код — быстро, чисто, без лишнего.</p>
+        <div class="welcome-layout">
+            <!-- Left sidebar -->
+            <div class="sidebar sidebar-left">
+                <div class="sidebar-block">
+                    <i class="mdi mdi-map-marker-outline"></i>
+                    <span>Россия</span>
+                </div>
+                <div class="sidebar-block">
+                    <i class="mdi mdi-briefcase-outline"></i>
+                    <span>Фриланс</span>
+                </div>
+                <div class="sidebar-block">
+                    <i class="mdi mdi-school-outline"></i>
+                    <span>ДППК</span>
+                </div>
+                <div class="sidebar-block">
+                    <i class="mdi mdi-calendar-outline"></i>
+                    <span>2008 г.р.</span>
+                </div>
             </div>
-            <div class="tech-stack">
-                <div class="tech-item">
-                    <i class="mdi mdi-robot"></i>
-                    <span>Телеграм-боты</span>
+
+            <!-- Center -->
+            <div class="welcome-center">
+                <div class="ghost-container">
+                    <img src="ghost.png" alt="Ghost" class="ghost-img">
                 </div>
-                <div class="tech-item">
-                    <i class="mdi mdi-discord"></i>
-                    <span>Дискорд-боты</span>
+                <div class="glass-card welcome-card">
+                    <h1>Добро пожаловать</h1>
+                    <p class="subtitle">Давайте познакомимся</p>
+                    <div class="bio-text">
+                        <p>Я, <span class="accent">Маэстро</span>, мне 18 лет. Разработчик-энтузиаст, полон амбиций.</p>
+                        <p>Превращаю идеи в рабочий код — быстро, чисто, без лишнего.</p>
+                    </div>
+                    <div class="tech-stack">
+                        <div class="tech-item">
+                            <i class="mdi mdi-robot"></i>
+                            <span>Телеграм-боты</span>
+                        </div>
+                        <div class="tech-item">
+                            <i class="mdi mdi-controller"></i>
+                            <span>Дискорд-боты</span>
+                        </div>
+                        <div class="tech-item">
+                            <i class="mdi mdi-web"></i>
+                            <span>Сайты / Landing</span>
+                        </div>
+                        <div class="tech-item">
+                            <i class="mdi mdi-nodejs"></i>
+                            <span>Node.js</span>
+                        </div>
+                        <div class="tech-item">
+                            <i class="mdi mdi-language-typescript"></i>
+                            <span>TypeScript</span>
+                        </div>
+                        <div class="tech-item">
+                            <i class="mdi mdi-language-python"></i>
+                            <span>Python</span>
+                        </div>
+                    </div>
                 </div>
-                <div class="tech-item">
-                    <i class="mdi mdi-web"></i>
-                    <span>Сайты / Landing</span>
+            </div>
+
+            <!-- Right sidebar -->
+            <div class="sidebar sidebar-right">
+                <div class="sidebar-block">
+                    <i class="mdi mdi-code-tags"></i>
+                    <span>vibe coding</span>
                 </div>
-                <div class="tech-item">
-                    <i class="mdi mdi-nodejs"></i>
-                    <span>Node.js</span>
+                <div class="sidebar-block">
+                    <i class="mdi mdi-console"></i>
+                    <span>CLI lover</span>
                 </div>
-                <div class="tech-item">
-                    <i class="mdi mdi-language-typescript"></i>
-                    <span>TypeScript</span>
+                <div class="sidebar-block">
+                    <i class="mdi mdi-palette-outline"></i>
+                    <span>UI/UX</span>
                 </div>
-                <div class="tech-item">
-                    <i class="mdi mdi-language-python"></i>
-                    <span>Python</span>
+                <div class="sidebar-block">
+                    <i class="mdi mdi-lightning-bolt-outline"></i>
+                    <span>fast delivery</span>
                 </div>
             </div>
         </div>
@@ -73,8 +114,10 @@
     <!-- HERO 2: Projects -->
     <section class="hero hero-projects" id="projects">
         <span class="section-number">02 / 04</span>
-        <h2><i class="mdi mdi-folder-open-outline"></i> Мои проекты</h2>
-        <p class="section-subtitle">Подтягиваются автоматически с GitHub</p>
+        <div class="section-header">
+            <h2><i class="mdi mdi-folder-open-outline"></i> Мои проекты</h2>
+            <p class="section-subtitle">Подтягиваются автоматически с GitHub</p>
+        </div>
         <div class="projects-grid" id="projects-grid">
             <!-- Filled by JS from GitHub API -->
         </div>
@@ -83,36 +126,26 @@
     <!-- HERO 3: Socials -->
     <section class="hero hero-socials" id="socials">
         <span class="section-number">03 / 04</span>
-        <h2><i class="mdi mdi-link-variant"></i> Мои соцсети</h2>
-        <div class="socials-grid">
-            <a href="https://t.me/maestromc1" target="_blank" class="glass-card social-card">
-                <i class="mdi mdi-send"></i>
-                <span>Telegram</span>
-                <p class="social-handle">@maestromc1</p>
-            </a>
-            <a href="https://www.tiktok.com/@maestromc11" target="_blank" class="glass-card social-card">
-                <i class="mdi mdi-music-note"></i>
-                <span>TikTok</span>
-                <p class="social-handle">@maestromc11</p>
-            </a>
-            <a href="https://github.com/HE-MAESTRO" target="_blank" class="glass-card social-card">
-                <i class="mdi mdi-github"></i>
-                <span>GitHub</span>
-                <p class="social-handle">HE-MAESTRO</p>
-            </a>
+        <div class="section-header">
+            <h2><i class="mdi mdi-link-variant"></i> Мои соцсети</h2>
         </div>
-
-        <!-- QR Code Card -->
-        <div class="qr-section">
-            <div class="glass-card qr-card">
-                <div class="qr-frame">
-                    <img src="qr-tg.png" alt="Telegram QR" class="qr-img">
-                </div>
-                <div class="qr-info">
-                    <i class="mdi mdi-qrcode-scan"></i>
-                    <p class="qr-title">Сканируй</p>
-                    <p class="qr-desc">Быстрый доступ к Telegram</p>
-                </div>
+        <div class="socials-layout">
+            <div class="socials-grid">
+                <a href="https://t.me/maestromc1" target="_blank" class="glass-card social-card">
+                    <i class="mdi mdi-send"></i>
+                    <span>Telegram</span>
+                    <p class="social-handle">@maestromc1</p>
+                </a>
+                <a href="https://www.tiktok.com/@maestromc11" target="_blank" class="glass-card social-card">
+                    <i class="mdi mdi-music-note"></i>
+                    <span>TikTok</span>
+                    <p class="social-handle">@maestromc11</p>
+                </a>
+                <a href="https://github.com/HE-MAESTRO" target="_blank" class="glass-card social-card">
+                    <i class="mdi mdi-github"></i>
+                    <span>GitHub</span>
+                    <p class="social-handle">HE-MAESTRO</p>
+                </a>
             </div>
         </div>
     </section>

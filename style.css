@@ -79,14 +79,6 @@ body {
     background: #fff;
 }
 
-.bg-glow--3 {
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background: #fff;
-    opacity: 0.02;
-}
-
 /* ===== SECTIONS ===== */
 .hero {
     min-height: 100vh;
@@ -146,6 +138,10 @@ h2 i {
 .section-subtitle {
     font-size: 0.85rem;
     opacity: 0.35;
+    text-align: center;
+}
+
+.section-header {
     margin-bottom: 48px;
     text-align: center;
 }
@@ -153,6 +149,65 @@ h2 i {
 /* ===== HERO 1: WELCOME ===== */
 .hero-welcome {
     gap: 36px;
+}
+
+.welcome-layout {
+    display: flex;
+    align-items: flex-start;
+    gap: 40px;
+    max-width: 1200px;
+    width: 100%;
+}
+
+/* Sidebar */
+.sidebar {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    padding-top: 80px;
+    min-width: 160px;
+}
+
+.sidebar-right {
+    align-items: flex-end;
+}
+
+.sidebar-block {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 12px 18px;
+    border: 1px solid var(--glass-border);
+    border-radius: 12px;
+    background: var(--glass-bg);
+    backdrop-filter: blur(10px);
+    font-size: 0.8rem;
+    opacity: 0.5;
+    transition: all 0.3s var(--ease-out);
+    white-space: nowrap;
+}
+
+.sidebar-block:hover {
+    opacity: 0.8;
+    border-color: rgba(255, 255, 255, 0.15);
+    transform: translateX(4px);
+}
+
+.sidebar-right .sidebar-block:hover {
+    transform: translateX(-4px);
+}
+
+.sidebar-block i {
+    font-size: 1.2rem;
+}
+
+/* Center */
+.welcome-center {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 32px;
+    flex: 1;
 }
 
 .ghost-container {
@@ -166,7 +221,6 @@ h2 i {
     height: 240px;
     object-fit: contain;
     image-rendering: pixelated;
-    /* No glow - clean pixel art */
 }
 
 @keyframes float {
@@ -336,6 +390,12 @@ h2 i {
     background: radial-gradient(ellipse at 70% 30%, rgba(255,255,255,0.015) 0%, transparent 60%);
 }
 
+.socials-layout {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
 .socials-grid {
     display: flex;
     gap: 28px;
@@ -373,57 +433,6 @@ h2 i {
 .social-handle {
     font-size: 0.8rem;
     opacity: 0.4;
-}
-
-/* ===== QR CODE SECTION ===== */
-.qr-section {
-    margin-top: 48px;
-    display: flex;
-    justify-content: center;
-}
-
-.qr-card {
-    display: flex;
-    align-items: center;
-    gap: 28px;
-    padding: 32px 40px;
-}
-
-.qr-frame {
-    padding: 12px;
-    border: 1px solid var(--glass-border);
-    border-radius: 16px;
-    background: rgba(255, 255, 255, 0.03);
-}
-
-.qr-img {
-    width: 140px;
-    height: 140px;
-    border-radius: 8px;
-    display: block;
-}
-
-.qr-info {
-    display: flex;
-    flex-direction: column;
-    gap: 6px;
-}
-
-.qr-info i {
-    font-size: 2rem;
-    opacity: 0.6;
-    margin-bottom: 4px;
-}
-
-.qr-title {
-    font-family: var(--font-heading);
-    font-size: 1.3rem;
-    letter-spacing: 0.03em;
-}
-
-.qr-desc {
-    font-size: 0.8rem;
-    opacity: 0.45;
 }
 
 /* ===== HERO 4: FAREWELL ===== */
@@ -497,18 +506,6 @@ h2 i {
     100% { opacity: 0; transform: translateY(-250px) scale(1); }
 }
 
-/* ===== CURSOR GHOST ===== */
-.cursor-ghost {
-    position: fixed;
-    width: 24px;
-    height: 24px;
-    pointer-events: none;
-    z-index: 9999;
-    opacity: 0.3;
-    transition: transform 0.1s ease-out;
-    image-rendering: pixelated;
-}
-
 /* ===== SCROLL PROGRESS ===== */
 .scroll-progress {
     position: fixed;
@@ -553,6 +550,16 @@ h2 i {
 .tech-item:nth-child(6) { transition-delay: 300ms; }
 
 /* ===== RESPONSIVE ===== */
+@media (max-width: 1024px) {
+    .sidebar {
+        display: none;
+    }
+
+    .welcome-layout {
+        justify-content: center;
+    }
+}
+
 @media (max-width: 768px) {
     .hero {
         padding: 40px 16px;
@@ -563,8 +570,8 @@ h2 i {
     }
 
     .ghost-img {
-        width: 140px;
-        height: 140px;
+        width: 160px;
+        height: 160px;
     }
 
     .projects-grid {
