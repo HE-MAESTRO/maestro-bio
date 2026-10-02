@@ -1,180 +1,202 @@
-<!DOCTYPE html>
-<html lang="ru">
+<!doctype html>
+<html lang="ru" class="no-js">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Маэстро — Bio</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet">
-    <link href="https://cdn.jsdelivr.net/npm/@mdi/font@7.4.47/css/materialdesignicons.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Маэстро — биография</title>
+  <meta name="description" content="Маэстро, 18 лет. Телеграм- и Дискорд-боты, сайты и лендинги, Node.js, TypeScript, Python.">
+  <meta name="theme-color" content="#000000">
+  <meta property="og:title" content="Маэстро — биография">
+  <meta property="og:description" content="Телеграм- и Дискорд-боты, сайты и лендинги, Node.js, TypeScript, Python.">
+  <link rel="icon" type="image/png" href="ghost-cut.png">
+
+  <script>document.documentElement.classList.replace('no-js', 'js');</script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400&display=swap">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@mdi/font@5.9.55/css/materialdesignicons.min.css">
+  <link rel="preload" href="fonts/Driagwa.ttf" as="font" type="font/ttf" crossorigin>
+  <link rel="stylesheet" href="style.css?v=5">
 </head>
 <body>
+  <div class="aura" aria-hidden="true"><span></span><span></span><span></span></div>
+  <canvas id="dust" aria-hidden="true"></canvas>
 
-    <!-- Scroll progress bar -->
-    <div class="scroll-progress" id="scroll-progress"></div>
+  <!-- pixel cursor trail + ghost companion (driven by script.js) -->
+  <canvas id="fx" aria-hidden="true"></canvas>
+  <div class="companion" id="companion" aria-hidden="true">
+    <img src="ghost-cut.png" alt="" width="64" height="64" draggable="false">
+  </div>
+  <div class="bubble" id="bubble" aria-hidden="true"></div>
 
-    <!-- Vertical marquee right edge -->
-    <div class="marquee-vertical" aria-hidden="true">
-        <div class="marquee-vertical-track">
-            <span>HE MAESTRO</span><span>HE MAESTRO</span><span>HE MAESTRO</span><span>HE MAESTRO</span><span>HE MAESTRO</span><span>HE MAESTRO</span><span>HE MAESTRO</span><span>HE MAESTRO</span><span>HE MAESTRO</span><span>HE MAESTRO</span>
+  <nav class="nav glass" aria-label="Разделы">
+    <a class="nav__brand" href="#hello">
+      <img src="ghost-cut.png" alt="" width="26" height="26">
+      <span>Маэстро</span>
+    </a>
+    <ul>
+      <li><a class="nav__link" href="#hello"><i class="mdi mdi-ghost-outline" aria-hidden="true"></i><span>Привет</span></a></li>
+      <li><a class="nav__link" href="#projects"><i class="mdi mdi-folder-outline" aria-hidden="true"></i><span>Проекты</span></a></li>
+      <li><a class="nav__link" href="#socials"><i class="mdi mdi-link-variant" aria-hidden="true"></i><span>Соцсети</span></a></li>
+      <li><a class="nav__link" href="#bye"><i class="mdi mdi-star-four-points-outline" aria-hidden="true"></i><span>Пока</span></a></li>
+    </ul>
+  </nav>
+
+  <main>
+    <!-- 1. Приветствие -->
+    <section id="hello" class="section hero">
+      <div class="wrap hero__grid">
+        <div class="hero__copy">
+          <p class="eyebrow reveal">Добро пожаловать на мою биографию</p>
+          <h1 class="hero__name reveal" id="heroName" style="--d:.08s">Маэстро</h1>
+          <p class="hero__lead reveal" style="--d:.16s">Давайте познакомимся. Я&nbsp;— Маэстро, мне 18&nbsp;лет, и&nbsp;я&nbsp;полон амбиций.</p>
+          <p class="hero__vibe reveal" style="--d:.24s">
+            <i class="mdi mdi-sine-wave" aria-hidden="true"></i>
+            <span>Пишу код на одной волне с&nbsp;нейросетями: от&nbsp;меня — идея и&nbsp;вайб, от&nbsp;машины — скорость. Так задумки быстро становятся рабочими продуктами.</span>
+          </p>
+
+          <div class="stack reveal" style="--d:.32s">
+            <p class="stack__label">Работаю с</p>
+            <ul class="stack__list">
+              <li class="chip glass"><i class="mdi mdi-telegram" aria-hidden="true"></i>Телеграм-боты</li>
+              <li class="chip glass"><i class="mdi mdi-discord" aria-hidden="true"></i>Дискорд-боты</li>
+              <li class="chip glass"><i class="mdi mdi-web" aria-hidden="true"></i>Сайты и лендинги</li>
+              <li class="chip glass"><i class="mdi mdi-nodejs" aria-hidden="true"></i>Node.js</li>
+              <li class="chip glass"><i class="mdi mdi-language-typescript" aria-hidden="true"></i>TypeScript</li>
+              <li class="chip glass"><i class="mdi mdi-language-python" aria-hidden="true"></i>Python</li>
+            </ul>
+          </div>
         </div>
-        <div class="marquee-vertical-track">
-            <span>HE MAESTRO</span><span>HE MAESTRO</span><span>HE MAESTRO</span><span>HE MAESTRO</span><span>HE MAESTRO</span><span>HE MAESTRO</span><span>HE MAESTRO</span><span>HE MAESTRO</span><span>HE MAESTRO</span><span>HE MAESTRO</span>
-        </div>
-    </div>
 
-    <!-- Animated background layers -->
-    <div class="bg-layer bg-grid"></div>
-    <div class="bg-layer bg-noise"></div>
-    <div class="bg-layer bg-glow bg-glow--1"></div>
-    <div class="bg-layer bg-glow bg-glow--2"></div>
+        <aside class="player glass reveal" style="--d:.2s" aria-label="Карточка персонажа">
+          <div class="player__top">
+            <span>Персонаж</span>
+            <span class="status"><span class="pulse" aria-hidden="true"></span>онлайн</span>
+          </div>
+          <div class="stage">
+            <div class="stage__halo" aria-hidden="true"></div>
+            <span class="face"><img class="ghost ghost-home" data-home="hero" src="ghost-cut.png" alt="Пиксельный призрак — маскот Маэстро" width="176" height="176" draggable="false"></span>
+            <div class="stage__floor" aria-hidden="true"></div>
+          </div>
+          <dl class="stats">
+            <div><dt>Имя</dt><dd>Маэстро</dd></div>
+            <div><dt>Уровень</dt><dd>18</dd></div>
+            <div><dt>Класс</dt><dd>Заклинатель нейросетей</dd></div>
+            <div><dt>Стихия</dt><dd>Вайб</dd></div>
+          </dl>
+          <div class="meter">
+            <div class="meter__top"><span>Амбиции</span><span>max</span></div>
+            <div class="meter__bar"><span></span></div>
+          </div>
+        </aside>
+      </div>
 
-    <!-- HERO 1: Welcome -->
-    <section class="hero hero-welcome" id="welcome">
-        <span class="section-number">01 / 04</span>
-        <div class="welcome-layout">
-            <!-- Left sidebar -->
-            <div class="sidebar sidebar-left">
-                <div class="sidebar-block">
-                    <i class="mdi mdi-map-marker-outline"></i>
-                    <span>Россия</span>
-                </div>
-                <div class="sidebar-block">
-                    <i class="mdi mdi-briefcase-outline"></i>
-                    <span>Фриланс</span>
-                </div>
-                <div class="sidebar-block">
-                    <i class="mdi mdi-school-outline"></i>
-                    <span>Студент</span>
-                </div>
-                <div class="sidebar-block">
-                    <i class="mdi mdi-calendar-outline"></i>
-                    <span>2008 г.р.</span>
-                </div>
-            </div>
-
-            <!-- Center -->
-            <div class="welcome-center">
-                <div class="ghost-container">
-                    <img src="ghost.png" alt="Ghost" class="ghost-img">
-                </div>
-                <div class="glass-card welcome-card">
-                    <h1>Добро пожаловать</h1>
-                    <p class="subtitle">Давайте познакомимся</p>
-                    <div class="bio-text">
-                        <p>Я, <span class="accent">Маэстро</span>, мне 18 лет. Разработчик-энтузиаст, полон амбиций.</p>
-                        <p>Превращаю идеи в рабочий код — быстро, чисто, без лишнего.</p>
-                    </div>
-                    <div class="tech-stack">
-                        <div class="tech-item">
-                            <i class="mdi mdi-robot"></i>
-                            <span>Телеграм-боты</span>
-                        </div>
-                        <div class="tech-item">
-                            <i class="mdi mdi-controller"></i>
-                            <span>Дискорд-боты</span>
-                        </div>
-                        <div class="tech-item">
-                            <i class="mdi mdi-web"></i>
-                            <span>Сайты / Landing</span>
-                        </div>
-                        <div class="tech-item">
-                            <i class="mdi mdi-nodejs"></i>
-                            <span>Node.js</span>
-                        </div>
-                        <div class="tech-item">
-                            <i class="mdi mdi-language-typescript"></i>
-                            <span>TypeScript</span>
-                        </div>
-                        <div class="tech-item">
-                            <i class="mdi mdi-language-python"></i>
-                            <span>Python</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Right sidebar -->
-            <div class="sidebar sidebar-right">
-                <div class="sidebar-block">
-                    <i class="mdi mdi-code-tags"></i>
-                    <span>automation</span>
-                </div>
-                <div class="sidebar-block">
-                    <i class="mdi mdi-console"></i>
-                    <span>CLI lover</span>
-                </div>
-                <div class="sidebar-block">
-                    <i class="mdi mdi-palette-outline"></i>
-                    <span>UI/UX</span>
-                </div>
-                <div class="sidebar-block">
-                    <i class="mdi mdi-lightning-bolt-outline"></i>
-                    <span>fast delivery</span>
-                </div>
-            </div>
-        </div>
-        <div class="scroll-hint">
-            <i class="mdi mdi-chevron-double-down"></i>
-        </div>
+      <a class="scroll-cue" href="#projects">
+        <span>Листай</span>
+        <i class="mdi mdi-chevron-down" aria-hidden="true"></i>
+      </a>
     </section>
 
-    <!-- HERO 2: Projects -->
-    <section class="hero hero-projects" id="projects">
-        <span class="section-number">02 / 04</span>
-        <div class="section-header">
-            <h2><i class="mdi mdi-folder-open-outline"></i> Мои проекты</h2>
-            <p class="section-subtitle">Подтягиваются автоматически с GitHub</p>
+    <!-- 2. Проекты -->
+    <section id="projects" class="section">
+      <div class="wrap">
+        <header class="sec-head">
+          <div class="sec-head__main">
+            <p class="eyebrow reveal">Проекты</p>
+            <h2 class="title reveal">Что я собрал</h2>
+          </div>
+          <div class="sec-head__aside reveal" style="--d:.12s">
+            <p class="sec-sub">Список подтягивается прямо с&nbsp;GitHub — новый репозиторий появится здесь сам.</p>
+            <p class="sync" aria-live="polite"><i class="mdi mdi-sync" aria-hidden="true"></i><span id="syncText">Синхронизация с GitHub…</span></p>
+          </div>
+        </header>
+
+        <div class="projects" id="projectsGrid" aria-busy="true">
+          <div class="project glass is-skeleton" aria-hidden="true"><span></span><span></span><span></span><span></span></div>
+          <div class="project glass is-skeleton" aria-hidden="true"><span></span><span></span><span></span><span></span></div>
+          <div class="project glass is-skeleton" aria-hidden="true"><span></span><span></span><span></span><span></span></div>
         </div>
-        <div class="projects-grid" id="projects-grid">
-            <!-- Filled by JS from GitHub API -->
-        </div>
+      </div>
     </section>
 
-    <!-- HERO 3: Socials -->
-    <section class="hero hero-socials" id="socials">
-        <span class="section-number">03 / 04</span>
-        <div class="section-header">
-            <h2><i class="mdi mdi-link-variant"></i> Мои соцсети</h2>
-        </div>
-        <div class="socials-layout">
-            <div class="socials-grid">
-                <a href="https://t.me/maestromc1" target="_blank" class="glass-card social-card">
-                    <i class="mdi mdi-send"></i>
-                    <span>Telegram</span>
-                    <p class="social-handle">@maestromc1</p>
-                </a>
-                <a href="https://www.tiktok.com/@maestromc11" target="_blank" class="glass-card social-card">
-                    <i class="mdi mdi-music-note"></i>
-                    <span>TikTok</span>
-                    <p class="social-handle">@maestromc11</p>
-                </a>
-                <a href="https://github.com/HE-MAESTRO" target="_blank" class="glass-card social-card">
-                    <i class="mdi mdi-github"></i>
-                    <span>GitHub</span>
-                    <p class="social-handle">HE-MAESTRO</p>
-                </a>
+    <!-- 3. Соцсети -->
+    <section id="socials" class="section">
+      <div class="wrap">
+        <header class="sec-head">
+          <div class="sec-head__main">
+            <p class="eyebrow reveal">Соцсети</p>
+            <h2 class="title reveal">Где меня найти</h2>
+          </div>
+          <div class="sec-head__aside reveal" style="--d:.12s">
+            <p class="sec-sub">Подписывайся, пиши и&nbsp;заглядывай в&nbsp;код.</p>
+          </div>
+        </header>
+
+        <div class="socials">
+          <a class="social glass spot reveal" data-ghost="подпишись на канал!" href="https://t.me/maestromc1" target="_blank" rel="noopener noreferrer">
+            <div class="social__head">
+              <i class="mdi mdi-telegram social__icon" aria-hidden="true"></i>
+              <i class="mdi mdi-arrow-top-right social__arrow" aria-hidden="true"></i>
             </div>
+            <div class="social__body">
+              <span class="social__kind">Канал</span>
+              <span class="social__name">Телеграм</span>
+              <span class="social__handle">t.me/maestromc1</span>
+            </div>
+          </a>
+
+          <a class="social glass spot reveal" style="--d:.1s" data-ghost="залетай в тик ток" href="https://www.tiktok.com/@maestromc11" target="_blank" rel="noopener noreferrer">
+            <div class="social__head">
+              <i class="mdi mdi-music-note social__icon" aria-hidden="true"></i>
+              <i class="mdi mdi-arrow-top-right social__arrow" aria-hidden="true"></i>
+            </div>
+            <div class="social__body">
+              <span class="social__kind">Видео</span>
+              <span class="social__name">Тик Ток</span>
+              <span class="social__handle">@maestromc11</span>
+            </div>
+          </a>
+
+          <a class="social glass spot reveal" style="--d:.2s" data-ghost="тут весь код" href="https://github.com/HE-MAESTRO" target="_blank" rel="noopener noreferrer">
+            <div class="social__head">
+              <i class="mdi mdi-github social__icon" aria-hidden="true"></i>
+              <i class="mdi mdi-arrow-top-right social__arrow" aria-hidden="true"></i>
+            </div>
+            <div class="social__body">
+              <span class="social__kind">Код</span>
+              <span class="social__name">GitHub</span>
+              <span class="social__handle">HE-MAESTRO</span>
+            </div>
+          </a>
         </div>
+      </div>
     </section>
 
-    <!-- HERO 4: Farewell -->
-    <section class="hero hero-farewell" id="farewell">
-        <span class="section-number">04 / 04</span>
-        <div class="farewell-content">
-            <div class="ghost-container farewell-ghost">
-                <img src="ghost.png" alt="Ghost" class="ghost-img ghost-small">
-            </div>
-            <div class="glass-card farewell-card">
-                <h2>Спасибо, что посетил<br>мою биографию</h2>
-                <p class="farewell-text">Удачи тебе <i class="mdi mdi-heart"></i></p>
-            </div>
-            <div class="particles" id="particles"></div>
-        </div>
-    </section>
+    <!-- 4. Прощание -->
+    <section id="bye" class="section bye">
+      <div class="bye__sky" id="sky" aria-hidden="true"></div>
 
-    <script src="script.js"></script>
+      <div class="wrap bye__inner">
+        <div class="bye__ghost" aria-hidden="true">
+          <span class="ring"></span><span class="ring"></span><span class="ring"></span>
+          <span class="face"><img class="ghost ghost--bye ghost-home" data-home="bye" src="ghost-cut.png" alt="" width="176" height="176" draggable="false"></span>
+        </div>
+
+        <h2 class="bye__title split" data-split>Спасибо, что посетил мою биографию</h2>
+        <p class="bye__wish split" data-split>Удачи тебе</p>
+        <p class="bye__sign reveal">— Маэстро</p>
+
+        <a class="btn btn--glass glass reveal" href="#hello"><i class="mdi mdi-arrow-up" aria-hidden="true"></i>В начало</a>
+      </div>
+
+      <footer class="foot wrap">
+        <span>© <span id="year">2026</span> Маэстро</span>
+        <span>Сделано на одной волне с нейросетями</span>
+      </footer>
+    </section>
+  </main>
+
+  <script src="script.js?v=5" defer></script>
 </body>
 </html>
